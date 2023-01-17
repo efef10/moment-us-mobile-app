@@ -21,3 +21,12 @@ const PALLETE_3 = {
     primary400: '#fcbf49',
     primary500: '#eae2b7',
 }
+
+export const PALLETE_4 = {
+    BLUE: '#6794CF',
+    YELLOW: '#FAE282',
+    RED: '#EE696A',
+    GREEN: '#7ED787',
+    ORANGE: '#EB9F6E',
+    WHITE: '#FFFFFF',
+}
