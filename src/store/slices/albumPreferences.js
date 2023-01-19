@@ -16,7 +16,8 @@ const albumPreferencesSlice = createSlice({
     },
     reducers: {
         selectDateRange: (state, action) => {
-            let { dateRangeKey, fromDate, toDate } = action;
+            let { dateRangeKey, fromDate, toDate } = action.payload;
+            console.log(dateRangeKey)
             switch (dateRangeKey) {
                 case 'LAST_3_DAYS': {
                     fromDate = subtractFromDate(new Date(), 3, 'day');
@@ -35,8 +36,8 @@ const albumPreferencesSlice = createSlice({
                 }
             }
             state.dateRangeKey = dateRangeKey;
-            state.dateRange.fromDate = fromDate;
-            state.dateRange.toDate = toDate;
+            state.dateRange.fromDate = fromDate.toString();
+            state.dateRange.toDate = toDate.toString();
         },
         selectPicturesCount: (state, action) => {
             let { key, count } = action;

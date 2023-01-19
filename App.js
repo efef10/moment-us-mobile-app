@@ -38,7 +38,7 @@ function HomeDrawerNavigation() {
         options={{
           title: 'Products',
           headerStyle: {
-            backgroundColor: PALLETE.BEIGE,
+            backgroundColor: 'white',
           },
           headerTintColor: 'black',
         }}

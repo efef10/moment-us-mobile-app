@@ -15,7 +15,6 @@ function Favorites() {
         })
         let photo = await MediaLibrary.getAssetInfoAsync(media.assets[0])
         setImageUri(photo.localUri) // photo.uri
-        console.log(video);
     };
 
     const favoriteProductsIds = useSelector((state) => state.favoriteProducts.ids);
@@ -35,9 +34,9 @@ function Favorites() {
                 },
             );
             if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-                console.log('You can use the camera');
+                // console.log('You can use the camera');
             } else {
-                console.log('Camera permission denied');
+                // console.log('Camera permission denied');
             }
         } catch (err) {
             console.warn(err);

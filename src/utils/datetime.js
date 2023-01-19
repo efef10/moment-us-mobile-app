@@ -10,6 +10,6 @@ export function subtractFromDate(date, count, type){
             date.setDate(date.getDate() - count)
         }
     }
-   
+   console.log(date)
     return date;
 }

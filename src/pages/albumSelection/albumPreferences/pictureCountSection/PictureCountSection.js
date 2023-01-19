@@ -7,7 +7,6 @@ import { selectPicturesCount } from "../../../../store/slices/albumPreferences";
 import { useState } from 'react';
 
 function PictureCountSection({ navigation }) {
-    console.log("ppp", pictureCountButtons)
     const picturesCount = useSelector((state) => state.albumPreferences.picturesCount);
     const dispatch = useDispatch()
 
@@ -33,7 +32,6 @@ function PictureCountSection({ navigation }) {
     }
 
     function renderCountButton(button) {
-        console.log(button)
         const isRegular = button.type === 'REGULAR';
         const onPress = isRegular ?
             regularButtonHandler :
