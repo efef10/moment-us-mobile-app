@@ -1,6 +1,16 @@
 {
   "expo": {
     "name": "moment-us-mobile-app",
+    "plugins": [
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos.",
+          "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ],
     "slug": "moment-us-mobile-app",
     "version": "1.0.0",
     "orientation": "portrait",

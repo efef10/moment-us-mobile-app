@@ -30,3 +30,18 @@ export const PALLETE_4 = {
     ORANGE: '#EB9F6E',
     WHITE: '#FFFFFF',
 }
+
+const PALLETE_5_WORM_WINTER = {
+    DARK_RED: "#9b2226",
+    RED: '#ae2012',
+    DARK_ORANGE: '#bb3e03',
+    ORANGE: '#ca6702',
+    YELLOW: '#ee9b00',
+    BEIGE: '#e9d8a6',
+    LIGHT_BLUE: '#94d2bd',
+    BLUE: '#0a9396',
+    DARK_BLUE: '#005f73',
+    BLACK: '#001219',
+}
+
+export const PALLETE = PALLETE_5_WORM_WINTER;

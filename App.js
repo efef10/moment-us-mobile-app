@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler'
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import AlbumSelection from './src/pages/AlbumSelection';
 import PhotosTakingGuides from './src/pages/PhotosTakingGuides';
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -10,10 +9,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ProductsHistory from './src/pages/ProductsHistory';
 import MyAccount from './src/pages/MyAccount';
 import AllProducts from './src/pages/allProducts/AllProducts';
-import { PALLETE_4 } from './src/constants/colors';
-import { Provider} from 'react-redux';
+import { PALLETE } from './src/constants/colors';
+import { Provider } from 'react-redux';
 import { store } from './src/store/store';
 import Favorites from './src/pages/Favorites';
+import { AlbumSelectionNavigator } from './src/pages/albumSelection/AlbumSelectionStackNavigation';
+
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -37,12 +38,9 @@ function HomeDrawerNavigation() {
         options={{
           title: 'Products',
           headerStyle: {
-            backgroundColor: PALLETE_4.WHITE,
+            backgroundColor: PALLETE.BEIGE,
           },
           headerTintColor: 'black',
-          // drawerIcon: ({ color, size }) => (
-          //   <Ionicons name="list" color={color} size={size} />
-          // ),
         }}
       />
       <Drawer.Screen
@@ -50,19 +48,11 @@ function HomeDrawerNavigation() {
         component={ProductsHistory}
         options={{
           title: 'Products History',
-          // drawerIcon: ({ color, size }) => (
-          //   <Ionicons name="list" color={color} size={size} />
-          // ),
         }}
       />
       <Drawer.Screen
         name="myAccount"
         component={MyAccount}
-        options={{
-          // drawerIcon: ({ color, size }) => (
-          //   <Ionicons name="star" color={color} size={size} />
-          // ),
-        }}
       />
     </Drawer.Navigator>
   )
@@ -84,7 +74,7 @@ function LandingPageTabNavigation() {
 export default function App() {
   return (
     <>
-      <StatusBar />
+      <StatusBar style="dark"/>
       <Provider store={store}>
         <NavigationContainer>
           <Stack.Navigator>
@@ -93,7 +83,10 @@ export default function App() {
               component={LandingPageTabNavigation}
               options={{ headerShown: false }}
             />
-            <Stack.Screen name="albumPreferences" component={AlbumSelection} />
+            <Stack.Screen
+              name="albumSelection"
+              component={AlbumSelectionNavigator}
+              options={{ headerShown: false }} />
           </Stack.Navigator>
         </NavigationContainer>
       </Provider>
@@ -102,10 +95,5 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
 });

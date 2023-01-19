@@ -1,8 +1,12 @@
 import { useState } from 'react';
-import { Text, View, Button, FlatList, StyleSheet } from 'react-native';
-import { PALLETE_4 } from '../../constants/colors';
+import { Text, View, FlatList, StyleSheet } from 'react-native';
+import { PALLETE } from '../../constants/colors';
 import { products } from '../../data/products';
 import ProductItem from './ProductItem';
+
+const productsToScreenMapper = {
+    1: 'albumSelection',
+}
 
 function AllProducts({ navigation }) {
 
@@ -13,7 +17,11 @@ function AllProducts({ navigation }) {
     }
 
     function renderProduct(itemData) {
-        return <ProductItem imageUrl={itemData.item.uri} title={itemData.item.title}/>
+        function productSelectHandler() {
+            // navigation.navigate(productsToScreenMapper[itemData.item._id])
+            navigation.navigate('albumSelection')
+        }
+        return <ProductItem imageUrl={itemData.item.uri} title={itemData.item.title} onSelect={productSelectHandler} color={itemData.item.color}/>
     }
 
     return (
@@ -37,7 +45,7 @@ export default AllProducts;
 
 const styles = StyleSheet.create({
     productsContainer: {
-        backgroundColor: PALLETE_4.BLUE,
+        backgroundColor: PALLETE.DARK_BLUE,
         flex: 1,
     },
     titleContainer: {
