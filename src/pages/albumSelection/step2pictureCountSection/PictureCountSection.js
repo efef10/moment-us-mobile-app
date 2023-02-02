@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet, TextInput } from "react-native";
-import PrimaryButton from "../../../../components/PrimaryButton";
-import { PALLETE } from "../../../../constants/colors";
+import PrimaryButton from "../../../components/PrimaryButton";
+import { PALLETE } from "../../../constants/colors";
 import { pictureCountButtons } from './pictureCountButtons';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectPicturesCount } from "../../../../store/slices/albumPreferences";
+import { selectPicturesCount } from "../../../store/slices/albumPreferences";
 import { useState } from 'react';
 
 function PictureCountSection({ navigation }) {

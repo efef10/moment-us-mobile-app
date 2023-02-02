@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { PALLETE } from '../../constants/colors';
-import DateRangeSection from './albumPreferences/DateRangeSection';
-import DisplaySelectedPictures from './albumPreferences/DisplaySelectedPictures';
-import PictureCountSection from './albumPreferences/pictureCountSection/PictureCountSection';
+import DateRangeSection from './step1dateRangeSection/DateRangeSection';
+import DisplaySelectedPictures from './step3displaySelected/DisplaySelectedPictures';
+import PictureCountSection from './step2pictureCountSection/PictureCountSection';
 
 export function AlbumSelectionNavigator() {
     const Stack = createNativeStackNavigator();
