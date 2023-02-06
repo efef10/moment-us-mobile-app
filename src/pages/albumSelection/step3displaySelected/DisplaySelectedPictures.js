@@ -37,7 +37,15 @@ function DisplaySelectedPictures() {
             <Text>
                 selected pictures:
             </Text>
-            {renderFiles()}
+            <View>
+                <Image source={require('./firstBackground.jpg')} style={styles.image1}></Image>
+                <Image source={{uri: files[5]}} style={styles.image2}/>
+                <Image source={{uri: files[10]}} style={styles.image3}/>
+                <Image source={{uri: files[11]}} style={styles.image4}/>
+                <Image source={{uri: files[2]}} style={styles.image5}/>
+
+            </View>
+            {/* {renderFiles()} */}
 
             {/* <Text>originals:</Text>
             <FlatList data={filesOriginal}
@@ -60,5 +68,39 @@ const styles = StyleSheet.create({
     image: {
         height: 200,
         margin: 10
-    }
+    },
+    image2: {
+        width: 80,
+        height: 100,
+        position: "absolute",
+        top: 20,
+        right: 36,
+        transform: [{rotate: '-10deg'}],
+    },
+    image3: {
+        width: 30,
+        height: 60,
+        position: "absolute",
+        top: 20,
+        left: 36,
+    },
+    image4: {
+        width: 50,
+        height: 80,
+        position: "absolute",
+        top: 20,
+        left: 70,
+    },
+    image5: {
+        width: 60,
+        height: 40,
+        position: "absolute",
+        top: 83,
+        left: 6,
+    },
+    image1: {
+        width: '100%',
+        height: 150,
+        position: "absolute",
+    },
 })

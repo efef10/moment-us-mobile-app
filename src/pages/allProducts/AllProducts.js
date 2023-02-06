@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Text, View, FlatList, StyleSheet } from 'react-native';
+import CombineImages from '../../components/CombineImages';
 import { PALLETE } from '../../constants/colors';
 import { products } from '../../data/products';
 import ProductItem from './ProductItem';
@@ -26,6 +27,7 @@ function AllProducts({ navigation }) {
 
     return (
         <View style={styles.productsContainer}>
+            {/* <CombineImages></CombineImages>  */}
             <View style={styles.titleContainer}>
                 <Text style={styles.titleText}>You pick your product</Text>
                 <Text style={styles.titleText}>We do the <Text>hard</Text> work</Text>
