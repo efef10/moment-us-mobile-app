@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     },
     buttonsContainer: {
         flex: 1,
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
         paddingVertical: 50,
         marginBottom: 100,
     },

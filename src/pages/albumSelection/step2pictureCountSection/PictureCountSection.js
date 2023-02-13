@@ -5,6 +5,7 @@ import { pictureCountButtons } from './pictureCountButtons';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectPicturesCount } from "../../../store/slices/albumPreferences";
 import { useState } from 'react';
+import SubTitle from '../../../components/SubTitle';
 
 function PictureCountSection({ navigation }) {
     const picturesCount = useSelector((state) => state.albumPreferences.picturesCount);
@@ -42,17 +43,24 @@ function PictureCountSection({ navigation }) {
                 key={button.key}
                 onPress={onPress.bind(this, button.key)}
                 buttonStyles={{ ...(button.key === picturesCount.key && { backgroundColor: PALLETE.YELLOW }) }}>
-                {isRegular ? <Text>{button.title}</Text>
-                    : <TextInput placeholder='pick number' />}
+                {/* {isRegular ? <Text>{button.title}</Text>
+                    : <TextInput placeholder='pick number' />} */}
+                <Text>{button.title}</Text>
             </PrimaryButton>
         )
     }
 
     return (
         <View style={styles.rootContainer}>
-            <Text>PictureCountSection</Text>
+            <View style={styles.titleContainer}>
+                <SubTitle subTitle={'select how many pictures you want to print'} color={PALLETE.DARK_RED} />
+            </View>
             {pictureCountButtons.map(renderCountButton)}
         </View>
+        // <View style={styles.rootContainer}>
+        //     <Text>PictureCountSection</Text>
+        //     {pictureCountButtons.map(renderCountButton)}
+        // </View>
     )
 }
 
@@ -63,5 +71,10 @@ const styles = StyleSheet.create({
         paddingTop: 30,
         backgroundColor: PALLETE.DARK_BLUE,
         flex: 1,
-    }
+    },
+    titleContainer: {
+        marginVertical: 30,
+        alignItems: 'center',
+
+    },
 })

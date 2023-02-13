@@ -12,7 +12,7 @@ export default SubTitle;
 
 const styles = StyleSheet.create({
     rootContainer: {
-        felx: 1,
+        // flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         padding: 5,
@@ -22,5 +22,6 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 30,
         fontWeight: 'bold',
+        textAlign: 'center'
     }
 })

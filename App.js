@@ -14,6 +14,7 @@ import { Provider } from 'react-redux';
 import { store } from './src/store/store';
 import Favorites from './src/pages/Favorites';
 import { AlbumSelectionNavigator } from './src/pages/albumSelection/AlbumSelectionStackNavigation';
+import { Ionicons } from '@expo/vector-icons';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -23,13 +24,13 @@ function HomeDrawerNavigation() {
   return (
     <Drawer.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: '#351401' },
+        headerStyle: { backgroundColor: PALLETE.BEIGE },
         headerTintColor: 'white',
         sceneContainerStyle: { backgroundColor: '#3f2f25' },
         drawerContentStyle: { backgroundColor: '#351401' },
         drawerInactiveTintColor: 'white',
         drawerActiveTintColor: '#351401',
-        drawerActiveBackgroundColor: '#e4baa1',
+        drawerActiveBackgroundColor: PALLETE.BLUE,
       }}
     >
       <Drawer.Screen
@@ -61,11 +62,32 @@ function HomeDrawerNavigation() {
 function LandingPageTabNavigation() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="home" component={HomeDrawerNavigation} options={{
-        headerShown: false,
-      }} />
-      <Tab.Screen name="guides" component={PhotosTakingGuides} />
-      <Tab.Screen name="favorites" component={Favorites} />
+      <Tab.Screen
+        name="home"
+        component={HomeDrawerNavigation}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => {
+            return <Ionicons name='home' size={size} color={color} />;
+          },
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name="guides"
+        component={PhotosTakingGuides}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => {
+            return <Ionicons name='book' size={size} color={color} />;
+          },
+        }} />
+      <Tab.Screen
+        name="favorites"
+        component={Favorites}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => {
+            return <Ionicons name='star' size={size} color={color} />;
+          },
+        }}/>
     </Tab.Navigator>
   );
 }
@@ -74,7 +96,7 @@ function LandingPageTabNavigation() {
 export default function App() {
   return (
     <>
-      <StatusBar style="dark"/>
+      <StatusBar style="dark" />
       <Provider store={store}>
         <NavigationContainer>
           <Stack.Navigator>

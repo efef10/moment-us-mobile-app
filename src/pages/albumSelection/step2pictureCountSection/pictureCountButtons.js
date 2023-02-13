@@ -19,7 +19,7 @@ export const pictureCountButtons = [
     },
     {
         key: 'CUSTOMIZED',
-        title: '',
+        title: 'customized',
         order: 1,
         type: 'CUSTOMIE',
     }

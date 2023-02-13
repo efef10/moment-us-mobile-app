@@ -10,7 +10,6 @@ function prepareLocalImages(localImages) {
 
 export async function fetchBestImagesByCriteria(fromDate, toDate, count) {
     const localImages = await getMediaFiles(['photo'], fromDate, toDate);
-    console.log('len', localImages.length)
     // return { bestImages: localImages.map(({localUri}) => ({uri: localUri}))}
     const userId = '1234';
     const title = 'myAlbum';
@@ -19,7 +18,6 @@ export async function fetchBestImagesByCriteria(fromDate, toDate, count) {
         nonAnalyzed,
 
     } = await preStartAutoSelection(userId, title, prepareLocalImages(localImages));
-    console.log('jobId', jobId)
 
     const uriToLocalImage = localImages.reduce((acc, image) => {
         return {
