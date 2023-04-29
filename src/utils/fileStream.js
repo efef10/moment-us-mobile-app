@@ -1,7 +1,7 @@
 import * as MediaLibrary from 'expo-media-library';
 
 
-export async function getMediaFiles(mediaTypes, fromDate, toDate) {
+export async function getMediaFiles(mediaTypes, fromDate, toDate, maxResults) {
     try {
         
 
@@ -10,7 +10,7 @@ export async function getMediaFiles(mediaTypes, fromDate, toDate) {
         let media = await MediaLibrary.getAssetsAsync({
             mediaType: mediaTypes,
             // after: '36',
-            first: 36,
+            first: maxResults || 36,
             ...(fromDate && { createdAfter: new Date(fromDate).getTime() }),
             
         })

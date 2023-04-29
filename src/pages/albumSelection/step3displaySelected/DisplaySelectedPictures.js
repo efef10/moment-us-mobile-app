@@ -15,13 +15,13 @@ function DisplaySelectedPictures() {
     // const [filesOriginal, setFilesOriginals] = useState([]);
 
     useEffect(() => {
-        setFiles(mockData.map(({ uri }) => uri))
-        // fetchBestImagesByCriteria(albumPreferences.dateRange.fromDate, new Date(), albumPreferences.picturesCount.count)
-        // .then(({bestImages, filteredImages, original}) => {
-        //     console.log(filteredImages)
-        //     setFiles(bestImages.map(({uri}) => uri));
-        //     // setFilesOriginals(original)
-        // })
+        // setFiles(mockData.map(({ uri }) => uri))
+        fetchBestImagesByCriteria(albumPreferences.dateRange.fromDate, new Date(), albumPreferences.picturesCount.count)
+        .then(({bestImages, filteredImages, original}) => {
+            console.log(filteredImages)
+            setFiles(bestImages.map(({uri}) => uri));
+            // setFilesOriginals(original)
+        })
         setTimeout(() => {
             setShowLoader(false)
         }, 2000);

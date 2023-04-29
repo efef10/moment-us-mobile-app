@@ -1,15 +1,18 @@
-import { preStartAutoSelection, startAutoSelection, getBestResults } from '../../../api/imagesJobs';
+import { preStartAutoSelection, analyzeWithPaging, startAutoSelection, getBestResults } from '../../../api/imagesJobs';
 import { getMediaFiles } from '../../../utils/fileStream'
 function prepareLocalImages(localImages) {
-    return localImages.map(({ filename, localUri, creationTime }) => ({
+    return localImages.map(({ filename, localUri, creationTime , width, height}) => ({
         uri: localUri,
         name: filename,
         date: creationTime,
+        width, 
+        height,
     }))
 }
 
 export async function fetchBestImagesByCriteria(fromDate, toDate, count) {
     const localImages = await getMediaFiles(['photo'], fromDate, toDate);
+    console.log("eee", localImages)
     // return { bestImages: localImages.map(({localUri}) => ({uri: localUri}))}
     const userId = '1234';
     const title = 'myAlbum';
@@ -18,7 +21,7 @@ export async function fetchBestImagesByCriteria(fromDate, toDate, count) {
         nonAnalyzed,
 
     } = await preStartAutoSelection(userId, title, prepareLocalImages(localImages));
-
+    console.log("fff", jobId, nonAnalyzed)
     const uriToLocalImage = localImages.reduce((acc, image) => {
         return {
             ...acc,
@@ -52,7 +55,7 @@ export async function fetchBestImagesByCriteria(fromDate, toDate, count) {
         arr.forEach(item => {
             let currentImages = imagesForRequest.slice(start, end)
             if (currentImages.length){
-                promises.push(startAutoSelection(currentImages, jobId, userId, pageNumber));
+                promises.push(analyzeWithPaging(currentImages, userId, jobId, pageNumber));
             }
             start = end
             end = start + PAGE_SIZE;

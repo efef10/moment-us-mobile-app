@@ -15,6 +15,7 @@ import { store } from './src/store/store';
 import Favorites from './src/pages/Favorites';
 import { AlbumSelectionNavigator } from './src/pages/albumSelection/AlbumSelectionStackNavigation';
 import { Ionicons } from '@expo/vector-icons';
+import Stories from './src/pages/stories/Stories';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -32,7 +33,18 @@ function HomeDrawerNavigation() {
         drawerActiveTintColor: '#351401',
         drawerActiveBackgroundColor: PALLETE.BLUE,
       }}
-    >
+    > 
+    <Drawer.Screen
+      name="stories"
+      component={Stories}
+      options={{
+        title: 'Products',
+          headerStyle: {
+            backgroundColor: 'white',
+          },
+          headerTintColor: 'black',
+      }}
+    />
       <Drawer.Screen
         name="allProducts"
         component={AllProducts}

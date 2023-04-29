@@ -1,0 +1,82 @@
+[
+    {
+        "albumId": "-1313584517",
+        "creationTime": 1679209991516,
+        "duration": 0,
+        "exif": {
+            "ImageLength": 1080,
+            "ImageWidth": 2220,
+            "LightSource": 0,
+            "Orientation": 0
+        },
+        "filename": "Screenshot_20230319-091311_Floorplanner.jpg",
+        "height": 1080,
+        "id": "7920",
+        "localUri": "file:///storage/emulated/0/DCIM/Screenshots/Screenshot_20230319-091311_Floorplanner.jpg",
+        "location": null,
+        "mediaType": "photo",
+        "modificationTime": 1679209991000,
+        "uri": "file:///storage/emulated/0/DCIM/Screenshots/Screenshot_20230319-091311_Floorplanner.jpg",
+        "width": 2220
+    },
+    {
+        "albumId": "-1313584517",
+        "creationTime": 1679245072123,
+        "duration": 0,
+        "exif": {
+            "ImageLength": 2220,
+            "ImageWidth": 1080,
+            "LightSource": 0,
+            "Orientation": 0
+        },
+        "filename": "Screenshot_20230319-185752_WhatsApp.jpg",
+        "height": 2220,
+        "id": "7924",
+        "localUri": "file:///storage/emulated/0/DCIM/Screenshots/Screenshot_20230319-185752_WhatsApp.jpg",
+        "location": null,
+        "mediaType": "photo",
+        "modificationTime": 1679245072000,
+        "uri": "file:///storage/emulated/0/DCIM/Screenshots/Screenshot_20230319-185752_WhatsApp.jpg",
+        "width": 1080
+    },
+    {
+        "albumId": "-1313584517",
+        "creationTime": 1679245453975,
+        "duration": 0,
+        "exif": {
+            "ImageLength": 2220,
+            "ImageWidth": 1080,
+            "LightSource": 0,
+            "Orientation": 0
+        },
+        "filename": "Screenshot_20230319-190413_WhatsApp.jpg",
+        "height": 2220,
+        "id": "7925",
+        "localUri": "file:///storage/emulated/0/DCIM/Screenshots/Screenshot_20230319-190413_WhatsApp.jpg",
+        "location": null,
+        "mediaType": "photo",
+        "modificationTime": 1679245454000,
+        "uri": "file:///storage/emulated/0/DCIM/Screenshots/Screenshot_20230319-190413_WhatsApp.jpg",
+        "width": 1080
+    },
+    {
+        "albumId": "-1313584517",
+        "creationTime": 1679246920221,
+        "duration": 0,
+        "exif": {
+            "ImageLength": 2220,
+            "ImageWidth": 1080,
+            "LightSource": 0,
+            "Orientation": 0
+        },
+        "filename": "Screenshot_20230319-192840_Chrome.jpg",
+        "height": 2220,
+        "id": "7926",
+        "localUri": "file:///storage/emulated/0/DCIM/Screenshots/Screenshot_20230319-192840_Chrome.jpg",
+        "location": null,
+        "mediaType": "photo",
+        "modificationTime": 1679246920000,
+        "uri": "file:///storage/emulated/0/DCIM/Screenshots/Screenshot_20230319-192840_Chrome.jpg",
+        "width": 1080
+    }
+]

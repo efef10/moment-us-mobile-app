@@ -1,13 +1,15 @@
 import { useState } from 'react';
-import { Text, View, FlatList, StyleSheet } from 'react-native';
+import { Text, View, FlatList, StyleSheet, ScrollView } from 'react-native';
+import Page1 from '../../albumTemplates/summerTemplate/pages/Page1';
+import Page2 from '../../albumTemplates/summerTemplate/pages/Page2';
+import Page3 from '../../albumTemplates/summerTemplate/pages/Page3';
+import Page4 from '../../albumTemplates/summerTemplate/pages/Page4';
+import Page5 from '../../albumTemplates/summerTemplate/pages/Page5';
+import Page6 from '../../albumTemplates/summerTemplate/pages/Page6';
 import CombineImages from '../../components/CombineImages';
 import { PALLETE } from '../../constants/colors';
 import { products } from '../../data/products';
 import ProductItem from './ProductItem';
-
-const productsToScreenMapper = {
-    1: 'albumSelection',
-}
 
 function AllProducts({ navigation }) {
 
@@ -22,11 +24,20 @@ function AllProducts({ navigation }) {
             // navigation.navigate(productsToScreenMapper[itemData.item._id])
             navigation.navigate('albumSelection')
         }
-        return <ProductItem imageUrl={itemData.item.uri} title={itemData.item.title} onSelect={productSelectHandler} color={itemData.item.color}/>
+        return <ProductItem imageUrl={itemData.item.uri} title={itemData.item.title} onSelect={productSelectHandler} color={itemData.item.color} />
     }
 
     return (
         <View style={styles.productsContainer}>
+            {/* <ScrollView>
+                <Page1></Page1>
+                <Page2></Page2>
+                <Page3></Page3>
+                <Page4></Page4>
+                <Page5></Page5>
+                <Page6></Page6>
+            </ScrollView> */}
+
             {/* <CombineImages></CombineImages>  */}
             <View style={styles.titleContainer}>
                 <Text style={styles.titleText}>You pick your product</Text>

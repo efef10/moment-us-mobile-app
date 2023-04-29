@@ -1,4 +1,4 @@
-const BASE_URL = 'https://a9ef-95-86-95-108.eu.ngrok.io';
+const BASE_URL = 'https://c8dc-95-86-64-202.eu.ngrok.io';
 const IMAGES_JOBS_URL = BASE_URL + '/jobs/images'
 import axios from 'axios';
 
@@ -36,7 +36,7 @@ export async function analyzeWithPaging(images, userId, jobId, pageNumber) {
     })).data
 }
 
-export async function startAutoSelection(images, jobId, userId, pageNumber) {
+export async function startAutoSelection(images) {
     const body = new FormData();
     images.forEach((file) => {
         body.append('images', file);
@@ -44,6 +44,19 @@ export async function startAutoSelection(images, jobId, userId, pageNumber) {
     const START_URL = '/auto-selection/start';
 
     return (await axios.post(`${IMAGES_JOBS_URL}${START_URL}?jobId=${jobId}&userId=${userId}&pageNumber=${pageNumber}`, body, {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+        }
+    })).data
+}
+
+export async function uploadTestFiles(files){
+    const body = new FormData();
+    files.forEach((file) => {
+        body.append('images', file);
+    });
+    const START_URL = '/test-upload';
+    return (await axios.post(`${BASE_URL}${START_URL}`, body, {
         headers: {
             'Content-Type': 'multipart/form-data',
         }
